@@ -23,7 +23,7 @@ Data management ! There would be a headache to sustain data consistency. For exa
 
 2. There are controller, entity, mapper, repository and service folders
 
-3. It uses postgresql to hold the product information and redis to hold shopping card. Service must access the shopping card as soon as possible. If you use RDBMS instead of redis (or maybe cassandra), you will be slow in the market.
+3. It uses postgresql to hold the product information and redis to hold shopping card. Service must access the shopping card as soon as possible. If you use RDBMS instead of redis (or maybe cassandra), you will be slow in the market. All connection settings are in the resources/application.properties
 
 4. CardController is a rest controller and it has addToCard and getCard methods
 - getCard : it serves the shopping card by requesting /sepet/{id}. GET
@@ -33,5 +33,6 @@ Data management ! There would be a headache to sustain data consistency. For exa
 
 6. CardService uses ProductRepository for postgre data and RedisRepository for redis data
 
+Not : Product entity has stock and productTitlePrice that are should not be in this class but i have limited time (i could not seperate and refactor, sorry) and somebody may change some part of the project. Please focus on the concept.
 
 
