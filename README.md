@@ -36,3 +36,27 @@ Data management ! There would be a headache to sustain data consistency. For exa
 Not : Product entity has stock and productTitlePrice that are should not be in this class but i have limited time (i could not seperate and refactor, sorry) and somebody may change some part of the project. Please focus on the concept.
 
 
+```
+/sepet/{id}. POST
+{
+	"productId" : 262,
+	"count" : 2
+}
+
+/sepet/{id}. GET
+{
+    "cardId": "1",
+    "cartProducts": [
+        {
+            "productId": 262,
+            "productTitle": "Arçelik M344 Otomatik Çamaşır Makinası",
+            "count": 2,
+            "price": 1350,
+            "productTotalPrice": 2700,
+            "stock": 10
+        }
+    ],
+    "cardTotalPrice": 2700,
+    "cardDate": null
+}
+```
